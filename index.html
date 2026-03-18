@@ -7,293 +7,70 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --pink-deep: #8b2d48;
-    --pink-dark: #c4607a;
-    --pink-mid: #e87ea0;
-    --pink-light: #f4a7b9;
-    --pink-pale: #fce8ee;
-    --pink-bg: #fff9fb;
-    --pink-border: #e8c4cc;
-    --tiktok: #1a1a2e;
-    --tiktok-accent: #ff4d6d;
-    --pinterest: #e60023;
-    --pinterest-bg: #fff0f0;
-    --gray: #6b6b6a;
-    --gray-light: #f5f4f0;
-    --black: #1a1a1a;
-    --white: #ffffff;
+    --pink-deep: #8b2d48; --pink-dark: #c4607a; --pink-mid: #e87ea0;
+    --pink-light: #f4a7b9; --pink-pale: #fce8ee; --pink-bg: #fff9fb;
+    --pink-border: #e8c4cc; --gray: #6b6b6a; --gray-light: #f5f4f0;
+    --border: #e0deda; --black: #1a1a1a; --white: #ffffff;
   }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: #faf8f6;
-    color: var(--black);
-    min-height: 100vh;
-    padding: 48px 24px 80px;
-  }
-
-  .page {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  /* Header */
-  .header {
-    text-align: center;
-    margin-bottom: 48px;
-    padding-bottom: 32px;
-    border-bottom: 0.5px solid var(--pink-border);
-  }
-
-  .header-eyebrow {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--pink-dark);
-    margin-bottom: 10px;
-  }
-
-  .header h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 300;
-    line-height: 1.1;
-    color: var(--black);
-    margin-bottom: 8px;
-  }
-
-  .header h1 em {
-    font-style: italic;
-    color: var(--pink-dark);
-  }
-
-  .header-sub {
-    font-size: 13px;
-    color: var(--gray);
-    letter-spacing: 0.3px;
-  }
-
-  /* Legend */
-  .legend {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-  }
-
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 12px;
-    color: var(--gray);
-    font-weight: 400;
-  }
-
-  .legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-
-  .dot-tiktok { background: var(--tiktok-accent); }
-  .dot-pinterest { background: var(--pinterest); }
-
-  /* Week block */
-  .week {
-    margin-bottom: 36px;
-  }
-
-  .week-header {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    margin-bottom: 16px;
-  }
-
-  .week-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--pink-light);
-    line-height: 1;
-    min-width: 36px;
-  }
-
-  .week-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--black);
-  }
-
-  .week-title span {
-    display: block;
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-bottom: 2px;
-  }
-
-  /* Days grid */
-  .days-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .day-card {
-    border-radius: 12px;
-    padding: 14px 16px;
-    border: 0.5px solid;
-    position: relative;
-    transition: transform 0.15s ease;
-  }
-
-  .day-card:hover {
-    transform: translateY(-1px);
-  }
-
-  .day-card.tiktok {
-    background: var(--white);
-    border-color: #e0deda;
-  }
-
-  .day-card.pinterest {
-    background: var(--white);
-    border-color: #f5d0d0;
-  }
-
-  .day-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-
-  .day-badge {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 20px;
-  }
-
-  .badge-tiktok {
-    background: #1a1a2e;
-    color: #ff4d6d;
-  }
-
-  .badge-pinterest {
-    background: #fff0f0;
-    color: var(--pinterest);
-    border: 0.5px solid #f5d0d0;
-  }
-
-  .day-name {
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--gray);
-    letter-spacing: 0.3px;
-  }
-
-  .day-content {
-    font-size: 12.5px;
-    color: var(--black);
-    line-height: 1.5;
-    font-weight: 400;
-  }
-
-  .day-content strong {
-    font-weight: 500;
-    color: var(--black);
-  }
-
-  .day-tag {
-    display: inline-block;
-    margin-top: 6px;
-    font-size: 9.5px;
-    color: var(--pink-dark);
-    background: var(--pink-pale);
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 500;
-  }
-
-  .tiktok .day-tag {
-    color: #ff4d6d;
-    background: #fff0f3;
-  }
-
-  /* Saturday special */
-  .day-card.action {
-    border-style: dashed;
-    border-color: var(--pink-border);
-    background: var(--pink-bg);
-  }
-
-  .day-card.action .day-content {
-    color: var(--gray);
-    font-style: italic;
-    font-size: 12px;
-  }
-
-  /* Divider */
-  .week-divider {
-    height: 0.5px;
-    background: var(--pink-border);
-    margin: 36px 0;
-    opacity: 0.6;
-  }
-
-  /* Footer */
-  .footer {
-    text-align: center;
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 0.5px solid var(--pink-border);
-  }
-
-  .footer p {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 15px;
-    color: var(--gray);
-  }
-
-  .footer strong {
-    color: var(--pink-dark);
-    font-style: normal;
-  }
-
-  @media (max-width: 600px) {
-    .days-grid { grid-template-columns: 1fr; }
-    .header h1 { font-size: 30px; }
-  }
-
-  @media print {
-    body { background: white; padding: 20px; }
-    .day-card:hover { transform: none; }
-  }
+  body { font-family: 'DM Sans', sans-serif; background: #faf8f6; color: var(--black); padding: 36px 20px 80px; }
+  .page { max-width: 680px; margin: 0 auto; }
+  .sitenav { display: flex; align-items: center; justify-content: space-between; padding: 13px 18px; background: var(--pink-bg); border: 0.5px solid var(--pink-border); border-radius: 12px; margin-bottom: 36px; }
+  .sitenav-brand { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--pink-dark); font-weight: 300; text-decoration: none; }
+  .sitenav-links { display: flex; gap: 6px; }
+  .sitenav-links a { font-size: 11px; font-weight: 500; padding: 6px 13px; border-radius: 20px; text-decoration: none; border: 0.5px solid var(--pink-border); color: var(--gray); background: white; transition: background 0.15s; }
+  .sitenav-links a:hover, .sitenav-links a.active { background: var(--pink-pale); color: var(--pink-deep); }
+  .header { text-align: center; margin-bottom: 40px; padding-bottom: 28px; border-bottom: 0.5px solid var(--pink-border); }
+  .header-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--pink-dark); margin-bottom: 10px; }
+  .header h1 { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; line-height: 1.1; color: var(--black); margin-bottom: 6px; }
+  .header h1 em { font-style: italic; color: var(--pink-dark); }
+  .header-sub { font-size: 13px; color: var(--gray); }
+  .legend { display: flex; gap: 20px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--gray); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-tiktok { background: #ff4d6d; } .dot-pinterest { background: #e60023; }
+  .week { margin-bottom: 32px; }
+  .week-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
+  .week-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--pink-light); line-height: 1; min-width: 34px; }
+  .week-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; font-style: italic; color: var(--black); }
+  .week-title span { display: block; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 9.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 1px; }
+  .days-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .day-card { border-radius: 11px; padding: 13px 15px; border: 0.5px solid; transition: transform 0.12s; }
+  .day-card:hover { transform: translateY(-1px); }
+  .day-card.tiktok { background: var(--white); border-color: var(--border); }
+  .day-card.pinterest { background: var(--white); border-color: #f5d0d0; }
+  .day-card.action { border-style: dashed; border-color: var(--pink-border); background: var(--pink-bg); }
+  .day-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .day-badge { font-size: 9px; font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; }
+  .badge-tiktok { background: #1a1a2e; color: #ff4d6d; }
+  .badge-pinterest { background: #fff0f0; color: #e60023; border: 0.5px solid #f5d0d0; }
+  .day-name { font-size: 10px; font-weight: 500; color: var(--gray); }
+  .day-content { font-size: 12.5px; color: var(--black); line-height: 1.5; }
+  .day-content strong { font-weight: 500; }
+  .day-tag { display: inline-block; margin-top: 6px; font-size: 9.5px; color: var(--pink-dark); background: var(--pink-pale); padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+  .tiktok .day-tag { color: #ff4d6d; background: #fff0f3; }
+  .week-divider { height: 0.5px; background: var(--pink-border); margin: 32px 0; opacity: 0.6; }
+  .footer { text-align: center; margin-top: 48px; padding-top: 20px; border-top: 0.5px solid var(--pink-border); }
+  .footer p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--gray); }
+  @media (max-width: 560px) { .days-grid { grid-template-columns: 1fr; } .sitenav-links a { padding: 5px 9px; font-size: 10px; } }
 </style>
 </head>
 <body>
 <div class="page">
 
+  <nav class="sitenav">
+    <a class="sitenav-brand" href="index.html">@sydneyaaliyah</a>
+    <div class="sitenav-links">
+      <a href="index.html" class="active">Calendar</a>
+      <a href="mediakit.html">Media Kit</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
   <div class="header">
     <p class="header-eyebrow">@sydneyaaliyah &nbsp;·&nbsp; Content Strategy</p>
     <h1>30-Day <em>Content Calendar</em></h1>
-    <p class="header-sub">The Hybrid Pivot &nbsp;·&nbsp; Style & Hair × AI Strategy</p>
+    <p class="header-sub">The Hybrid Pivot &nbsp;·&nbsp; Style &amp; Hair × AI Strategy</p>
   </div>
 
   <div class="legend">
@@ -301,275 +78,61 @@
     <div class="legend-item"><div class="legend-dot dot-pinterest"></div> Pinterest — Search Engine</div>
   </div>
 
-  <!-- WEEK 1 -->
   <div class="week">
-    <div class="week-header">
-      <div class="week-num">1</div>
-      <div class="week-title"><span>Focus</span>Setup</div>
-    </div>
+    <div class="week-header"><div class="week-num">1</div><div class="week-title"><span>Focus</span>Setup</div></div>
     <div class="days-grid">
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Monday</span>
-        </div>
-        <div class="day-content">Faceless POV: <strong>"How I prompt AI for content."</strong></div>
-        <span class="day-tag">Education</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Tuesday</span>
-        </div>
-        <div class="day-content">Multi-page Pin: <strong>"AI Automation for Creators"</strong></div>
-        <span class="day-tag">SEO Pin</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Wednesday</span>
-        </div>
-        <div class="day-content">Wig unboxing (hands-only) + <strong>trending audio</strong></div>
-        <span class="day-tag">Aesthetic</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Thursday</span>
-        </div>
-        <div class="day-content">Mood board: <strong>"Spring Street Style"</strong></div>
-        <span class="day-tag">Mood Board</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Friday</span>
-        </div>
-        <div class="day-content">60s+ Tutorial: <strong>"The AI tool saving me 10 hours."</strong></div>
-        <span class="day-tag">Tutorial</span>
-      </div>
-
-      <div class="day-card action pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Saturday</span>
-        </div>
-        <div class="day-content">Board cleanup — add SEO keywords to 3 boards</div>
-        <span class="day-tag">Maintenance</span>
-      </div>
-
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Monday</span></div><div class="day-content">Faceless POV: <strong>"How I prompt AI for content."</strong></div><span class="day-tag">Education</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Tuesday</span></div><div class="day-content">Multi-page Pin: <strong>"AI Automation for Creators"</strong></div><span class="day-tag">SEO Pin</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Wednesday</span></div><div class="day-content">Wig unboxing (hands-only) + <strong>trending audio</strong></div><span class="day-tag">Aesthetic</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Thursday</span></div><div class="day-content">Mood board: <strong>"Spring Street Style"</strong></div><span class="day-tag">Mood Board</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Friday</span></div><div class="day-content">60s+ Tutorial: <strong>"The AI tool saving me 10 hours."</strong></div><span class="day-tag">Tutorial</span></div>
+      <div class="day-card action pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Saturday</span></div><div class="day-content">Board cleanup — add SEO keywords to 3 boards</div><span class="day-tag">Maintenance</span></div>
     </div>
   </div>
 
   <div class="week-divider"></div>
 
-  <!-- WEEK 2 -->
   <div class="week">
-    <div class="week-header">
-      <div class="week-num">2</div>
-      <div class="week-title"><span>Focus</span>Proof</div>
-    </div>
+    <div class="week-header"><div class="week-num">2</div><div class="week-title"><span>Focus</span>Proof</div></div>
     <div class="days-grid">
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Monday</span>
-        </div>
-        <div class="day-content">Screen record: <strong>"Automating my Pinterest Pins."</strong></div>
-        <span class="day-tag">Behind Scenes</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Tuesday</span>
-        </div>
-        <div class="day-content">Video Pin: <strong>"How to style a glueless wig."</strong> Use tags.</div>
-        <span class="day-tag">Video Pin</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Wednesday</span>
-        </div>
-        <div class="day-content">Close-up: <strong>"Testing the lace on this [Product]."</strong> Shop link.</div>
-        <span class="day-tag">Affiliate</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Thursday</span>
-        </div>
-        <div class="day-content">Checklist: <strong>"5 AI Tools for Content Creators"</strong></div>
-        <span class="day-tag">Checklist Pin</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Friday</span>
-        </div>
-        <div class="day-content">Storytime: <strong>"Why I'm switching to AI strategy."</strong></div>
-        <span class="day-tag">Storytime</span>
-      </div>
-
-      <div class="day-card action pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Saturday</span>
-        </div>
-        <div class="day-content">Repurpose TikTok 60s video as an Idea Pin</div>
-        <span class="day-tag">Repurpose</span>
-      </div>
-
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Monday</span></div><div class="day-content">Screen record: <strong>"Automating my Pinterest Pins."</strong></div><span class="day-tag">Behind Scenes</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Tuesday</span></div><div class="day-content">Video Pin: <strong>"How to style a glueless wig."</strong> Use tags.</div><span class="day-tag">Video Pin</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Wednesday</span></div><div class="day-content">Close-up: <strong>"Testing the lace on this [Product]."</strong> Shop link.</div><span class="day-tag">Affiliate</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Thursday</span></div><div class="day-content">Checklist: <strong>"5 AI Tools for Content Creators"</strong></div><span class="day-tag">Checklist Pin</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Friday</span></div><div class="day-content">Storytime: <strong>"Why I'm switching to AI strategy."</strong></div><span class="day-tag">Storytime</span></div>
+      <div class="day-card action pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Saturday</span></div><div class="day-content">Repurpose TikTok 60s video as an Idea Pin</div><span class="day-tag">Repurpose</span></div>
     </div>
   </div>
 
   <div class="week-divider"></div>
 
-  <!-- WEEK 3 -->
   <div class="week">
-    <div class="week-header">
-      <div class="week-num">3</div>
-      <div class="week-title"><span>Focus</span>Sales</div>
-    </div>
+    <div class="week-header"><div class="week-num">3</div><div class="week-title"><span>Focus</span>Sales</div></div>
     <div class="days-grid">
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Monday</span>
-        </div>
-        <div class="day-content">Faceless POV: <strong>"My ATL desk setup for AI work."</strong></div>
-        <span class="day-tag">Lifestyle</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Tuesday</span>
-        </div>
-        <div class="day-content">Shopping Pin: <strong>"Digital Nomad Toolkit"</strong></div>
-        <span class="day-tag">Shopping Pin</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Wednesday</span>
-        </div>
-        <div class="day-content">Demo: <strong>"3 ways to style [Shop Product]."</strong></div>
-        <span class="day-tag">Affiliate</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Thursday</span>
-        </div>
-        <div class="day-content">Sneak peek: <strong>"The AI Automation Protocol"</strong></div>
-        <span class="day-tag">Teaser</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Friday</span>
-        </div>
-        <div class="day-content">Review: <strong>"Why this AI tool beats [Competitor]."</strong></div>
-        <span class="day-tag">Review</span>
-      </div>
-
-      <div class="day-card action pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Saturday</span>
-        </div>
-        <div class="day-content">Create a board for <strong>"Inclusive Beauty"</strong> — use AI tags</div>
-        <span class="day-tag">New Board</span>
-      </div>
-
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Monday</span></div><div class="day-content">Faceless POV: <strong>"My ATL desk setup for AI work."</strong></div><span class="day-tag">Lifestyle</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Tuesday</span></div><div class="day-content">Shopping Pin: <strong>"Digital Nomad Toolkit"</strong></div><span class="day-tag">Shopping Pin</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Wednesday</span></div><div class="day-content">Demo: <strong>"3 ways to style [Shop Product]."</strong></div><span class="day-tag">Affiliate</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Thursday</span></div><div class="day-content">Sneak peek: <strong>"The AI Automation Protocol"</strong></div><span class="day-tag">Teaser</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Friday</span></div><div class="day-content">Review: <strong>"Why this AI tool beats [Competitor]."</strong></div><span class="day-tag">Review</span></div>
+      <div class="day-card action pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Saturday</span></div><div class="day-content">Create a board for <strong>"Inclusive Beauty"</strong> — use AI tags</div><span class="day-tag">New Board</span></div>
     </div>
   </div>
 
   <div class="week-divider"></div>
 
-  <!-- WEEK 4 -->
   <div class="week">
-    <div class="week-header">
-      <div class="week-num">4</div>
-      <div class="week-title"><span>Focus</span>Authority</div>
-    </div>
+    <div class="week-header"><div class="week-num">4</div><div class="week-title"><span>Focus</span>Authority</div></div>
     <div class="days-grid">
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Monday</span>
-        </div>
-        <div class="day-content">60s+ Deep Dive: <strong>"Scaling my Whop store with AI."</strong></div>
-        <span class="day-tag">Deep Dive</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Tuesday</span>
-        </div>
-        <div class="day-content">Infographic: <strong>"How to build a content factory"</strong></div>
-        <span class="day-tag">Infographic</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Wednesday</span>
-        </div>
-        <div class="day-content">Rapid Fire: <strong>"Q&A on AI Content Systems."</strong></div>
-        <span class="day-tag">Q&A</span>
-      </div>
-
-      <div class="day-card pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Thursday</span>
-        </div>
-        <div class="day-content"><strong>"Hair Pattern Guide"</strong> using your wig content</div>
-        <span class="day-tag">Hair Guide</span>
-      </div>
-
-      <div class="day-card tiktok">
-        <div class="day-meta">
-          <span class="day-badge badge-tiktok">TikTok</span>
-          <span class="day-name">Friday</span>
-        </div>
-        <div class="day-content">Vlog: <strong>"A day in my life as an ATL Strategist."</strong></div>
-        <span class="day-tag">Vlog</span>
-      </div>
-
-      <div class="day-card action pinterest">
-        <div class="day-meta">
-          <span class="day-badge badge-pinterest">Pinterest</span>
-          <span class="day-name">Saturday</span>
-        </div>
-        <div class="day-content">Apply for Inclusion Fund (if window is open)</div>
-        <span class="day-tag">Action Item</span>
-      </div>
-
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Monday</span></div><div class="day-content">60s+ Deep Dive: <strong>"Scaling my Whop store with AI."</strong></div><span class="day-tag">Deep Dive</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Tuesday</span></div><div class="day-content">Infographic: <strong>"How to build a content factory"</strong></div><span class="day-tag">Infographic</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Wednesday</span></div><div class="day-content">Rapid Fire: <strong>"Q&amp;A on AI Content Systems."</strong></div><span class="day-tag">Q&amp;A</span></div>
+      <div class="day-card pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Thursday</span></div><div class="day-content"><strong>"Hair Pattern Guide"</strong> using your wig content</div><span class="day-tag">Hair Guide</span></div>
+      <div class="day-card tiktok"><div class="day-meta"><span class="day-badge badge-tiktok">TikTok</span><span class="day-name">Friday</span></div><div class="day-content">Vlog: <strong>"A day in my life as an ATL Strategist."</strong></div><span class="day-tag">Vlog</span></div>
+      <div class="day-card action pinterest"><div class="day-meta"><span class="day-badge badge-pinterest">Pinterest</span><span class="day-name">Saturday</span></div><div class="day-content">Apply for Inclusion Fund (if window is open)</div><span class="day-tag">Action Item</span></div>
     </div>
   </div>
 
-  <div class="footer">
-    <p>@sydneyaaliyah &nbsp;·&nbsp; <strong>Your guide to effortless style & hair — ATL.</strong></p>
-  </div>
+  <div class="footer"><p>@sydneyaaliyah &nbsp;·&nbsp; Your guide to effortless style &amp; hair — ATL.</p></div>
 
 </div>
 </body>
