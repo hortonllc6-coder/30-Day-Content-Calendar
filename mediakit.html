@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sydney Aaliyah — Media Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink-deep: #8b2d48;
+    --pink-dark: #c4607a;
+    --pink-mid: #f4a7b9;
+    --pink-accent: #e87ea0;
+    --pink-pale: #fce8ee;
+    --pink-bg: #fff9fb;
+    --pink-border: #e8c4cc;
+    --gray: #777770;
+    --gray-light: #f5f4f0;
+    --border: #e0deda;
+    --black: #1a1a1a;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #faf8f6;
+    color: var(--black);
+    min-height: 100vh;
+    padding: 48px 20px 80px;
+  }
+
+  .kit {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border: 0.5px solid var(--pink-border);
+    border-radius: 16px;
+    background: var(--pink-bg);
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--pink-mid), var(--pink-accent), var(--pink-mid));
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--pink-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--pink-deep);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin: 0 0 4px;
+    color: var(--black);
+  }
+
+  .handle {
+    font-size: 13px;
+    color: var(--pink-dark);
+    margin: 0 0 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gray);
+    max-width: 340px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+  }
+
+  .pill {
+    display: inline-block;
+    background: var(--pink-pale);
+    color: var(--pink-deep);
+    font-size: 11px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--pink-dark);
+    margin-bottom: 12px;
+  }
+
+  /* ── STATS ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-card {
+    background: var(--gray-light);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    border: 0.5px solid var(--border);
+  }
+
+  .stat-platform {
+    font-size: 10px;
+    color: var(--gray);
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--pink-dark);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--gray);
+  }
+
+  /* ── TWO COL ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .block {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+  }
+
+  .block ul {
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+
+  .block ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--gray);
+    padding: 6px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .block ul li:last-child { border-bottom: none; }
+
+  .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--pink-mid);
+    flex-shrink: 0;
+  }
+
+  /* ── RATES ── */
+  .rates-block {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .rate-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 13px;
+  }
+
+  .rate-row:last-child { border-bottom: none; }
+  .rate-type { color: var(--gray); }
+  .rate-val { font-weight: 500; color: var(--black); }
+  .rate-note { font-size: 11.5px; color: var(--pink-dark); }
+
+  /* ── AUDIENCE ── */
+  .audience-block {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .audience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    background: var(--pink-pale);
+    color: var(--pink-deep);
+  }
+
+  .tag.neutral {
+    background: var(--gray-light);
+    color: var(--gray);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--pink-bg);
+    border: 0.5px solid var(--pink-border);
+    border-radius: 12px;
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  .footer-email {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--pink-dark);
+    text-decoration: none;
+  }
+
+  .footer-email:hover { text-decoration: underline; }
+
+  @media (max-width: 560px) {
+    .two-col { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid .stat-card:last-child { grid-column: 1 / -1; }
+    .name { font-size: 26px; }
+    .footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="kit">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="avatar">SA</div>
+    <h1 class="name">Sydney Aaliyah</h1>
+    <p class="handle">@sydneyaaliyah</p>
+    <p class="tagline">Your guide to effortless style &amp; hair — ATL.</p>
+    <span class="pill">Style &amp; Hair Creator</span>
+  </div>
+
+  <!-- STATS -->
+  <p class="section-label">Platforms &amp; Reach</p>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-platform">TikTok</div>
+      <div class="stat-num">1,015</div>
+      <div class="stat-label">followers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-platform">TikTok</div>
+      <div class="stat-num">21.5K</div>
+      <div class="stat-label">total likes</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-platform">Pinterest</div>
+      <div class="stat-num">1.5K</div>
+      <div class="stat-label">monthly views</div>
+    </div>
+  </div>
+
+  <!-- AUDIENCE -->
+  <div class="audience-block">
+    <p class="section-label" style="margin-bottom:10px;">Audience</p>
+    <div class="audience-tags">
+      <span class="tag">Ages 24–35</span>
+      <span class="tag">Minimal Baddie</span>
+      <span class="tag">Minimal Chic</span>
+      <span class="tag">Tomboy Chic</span>
+      <span class="tag">Tomboy Fem</span>
+      <span class="tag neutral">ATL &amp; Southeast</span>
+      <span class="tag neutral">Style-conscious women</span>
+    </div>
+  </div>
+
+  <!-- TWO COL -->
+  <div class="two-col">
+    <div class="block">
+      <p class="section-label" style="margin-bottom:10px;">Content Focus</p>
+      <ul>
+        <li><span class="dot"></span>Hairstyle tutorials &amp; inspo</li>
+        <li><span class="dot"></span>Outfit styling &amp; fashion</li>
+        <li><span class="dot"></span>Product recommendations</li>
+        <li><span class="dot"></span>Atlanta lifestyle</li>
+      </ul>
+    </div>
+    <div class="block">
+      <p class="section-label" style="margin-bottom:10px;">Partnership Types</p>
+      <ul>
+        <li><span class="dot"></span>Sponsored TikTok posts</li>
+        <li><span class="dot"></span>Amazon affiliate collabs</li>
+        <li><span class="dot"></span>Pinterest pin features</li>
+        <li><span class="dot"></span>Brand gifting</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RATES -->
+  <div class="rates-block">
+    <p class="section-label" style="margin-bottom:10px;">Collaboration Rates</p>
+    <div class="rate-row">
+      <span class="rate-type">Dedicated TikTok</span>
+      <span class="rate-val">Open to discuss</span>
+    </div>
+    <div class="rate-row">
+      <span class="rate-type">TikTok integration</span>
+      <span class="rate-val">Open to discuss</span>
+    </div>
+    <div class="rate-row">
+      <span class="rate-type">Amazon affiliate</span>
+      <span class="rate-note">Commission-based</span>
+    </div>
+    <div class="rate-row">
+      <span class="rate-type">Gifting / PR</span>
+      <span class="rate-note">Always welcome</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      Ready to work together?<br>Reach out and let's create something.
+    </div>
+    <a class="footer-email" href="mailto:bysydneyaaliyah@gmail.com">bysydneyaaliyah@gmail.com</a>
+  </div>
+
+</div>
+</body>
+</html>
